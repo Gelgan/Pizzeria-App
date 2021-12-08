@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+//App header
+.container-header {
+  max-width: auto;
+  margin: auto;
+  overflow: auto;
+  height: 50px;
+  border: 1px solid rgb(67, 193, 204);
+  padding: 5px;
+  border-radius: 0px;
+  background-color:  rgb(67, 193, 204)
+  ;
+}
+//Individual boxes for specials, with image, description and price btns
+.container-specials {
+  width: 420px;
+  margin: 10px;
+  overflow: auto;
+  min-height: 450px;
+  border: 1px solid black;
+  float: left;
+}
+.btn {
+  display: inline-block;
+  background: #000;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  margin: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: inherit;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+//Images for specials
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+//Center content in container
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.container-description{
+  width: auto;
+  margin: 5px;
+  overflow: auto;
+  height: 100px;
+  border: 1px solid rgb(67, 193, 204);
+  padding: 5px;
+  border-radius: 0px;
+  background-color:  rgb(67, 193, 204);
+  display: flex;
+  justify-content: center;
+}
+
