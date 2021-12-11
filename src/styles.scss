@@ -1,4 +1,39 @@
 
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Pizzeria-App-primary: mat.define-palette(mat.$indigo-palette);
+$Pizzeria-App-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Pizzeria-App-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Pizzeria-App-theme: mat.define-light-theme((
+  color: (
+    primary: $Pizzeria-App-primary,
+    accent: $Pizzeria-App-accent,
+    warn: $Pizzeria-App-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Pizzeria-App-theme);
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,12 +44,11 @@
   max-width: auto;
   margin: auto;
   overflow: auto;
-  height: 50px;
+  height: 60px;
   border: 1px solid rgb(67, 193, 204);
   padding: 5px;
   border-radius: 0px;
-  background-color:  rgb(67, 193, 204)
-  ;
+  background-color:  rgb(67, 193, 204);
 }
 //Individual boxes for specials, with image, description and price btns
 .container-specials {
@@ -23,7 +57,9 @@
   overflow: auto;
   min-height: 450px;
   border: 1px solid black;
-  float: left;
+  float:left;
+  display: grid;
+  justify-content: center;
 }
 .btn {
   display: inline-block;
@@ -64,15 +100,34 @@
 
 //Container for item descriptions
 .container-description{
-  width: auto;
+  width: 400px;
   margin: 5px;
   overflow: auto;
   height: 100px;
   border: 1px solid rgb(67, 193, 204);
   padding: 5px;
-  border-radius: 0px;
+  border-radius: 5px;
   background-color:  rgb(67, 193, 204);
+  display: flex;
+  justify-content:center;
+}
+
+.Menu-btn{
+  float: left;
+  display: flex;
+  margin-right: auto;
+}
+
+.cart-container{
+  border: 1px solid;
+  max-width: auto;
+  max-height: auto;
+  min-height: 200px;
+}
+
+.total-container{
+  border: 1px solid;
+  max-width: auto;
   display: flex;
   justify-content: center;
 }
-
